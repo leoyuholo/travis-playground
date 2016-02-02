@@ -9,6 +9,10 @@ services:
 
 before_install:
   - docker pull tomlau10/sandbox-run
+  - docker pull ubuntu
+  - docker ps -a
 
 script:
+  - docker run ubuntu ls
+  - docker run --rm --net none --security-opt apparmor:unconfined --entrypoint sh tomlau10/sandbox-run ls
   - docker run --rm --net none --security-opt apparmor:unconfined --entrypoint sh tomlau10/sandbox-run ls
