@@ -14,5 +14,5 @@ before_install:
 
 script:
   - docker run ubuntu ls
-  - docker run --rm --net none --security-opt apparmor:unconfined --entrypoint sh ubuntu -c "ls /"
+  - docker run --rm --net none --entrypoint sh ubuntu -c "ls /"
   - docker run --rm --net none --security-opt apparmor:unconfined --entrypoint sh tomlau10/sandbox-run -c "ls /"
