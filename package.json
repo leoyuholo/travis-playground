@@ -1,0 +1,12 @@
+{
+  "name": "travis-playground",
+  "description": "try travis",
+  "author": "Leo Yu Ho, Lo <leoyuholo@gmail.com>",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "coffeelint app.coffee"
+  },
+  "devDependencies": {
+    "coffeelint": "^1.14.2"
+  }
+}
