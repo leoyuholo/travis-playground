@@ -3,19 +3,34 @@ childProcess = require 'child_process'
 cmd = [
 	'docker'
 	'run'
+	'-i'
 	'--rm'
 	'--net', 'none'
-	'--entrypoint', 'sh'
 	'-v', __dirname + ':/vol/'
 	'-u', '$(id -u):$(id -g)'
 	'tomlau10/sandbox-run'
-	'-c', '"ls /vol"'
+	'-C'
+	'-c', 'code.c'
+	'code'
 ].join ' '
 
-childProcess.exec cmd, {timeout: 2000}, (err, stdout, stderr) ->
+proc = childProcess.exec cmd, {timeout: 4000}, (err, stdout, stderr) ->
 	console.log "err [#{err}]"
-	console.log "stdout [#{stdout}]"
+	# console.log "stdout [#{stdout}]"
 	console.log "stderr [#{stderr}]"
+
+proc.stdin.write '0\n'
+
+proc.stdout.on 'data', (data) ->
+	console.log 'data', data
+	num = +data
+	proc.stdin.write "#{num + 100}\n" if !isNaN num
+
+proc.stderr.on 'data', (data) ->
+	console.log 'err', data
+
+proc.on 'end', (code) ->
+	console.log 'end', code
 
 console.log cmd
 console.log 'Hello Travis'
