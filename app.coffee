@@ -6,9 +6,10 @@ cmd = [
 	'--rm'
 	'--net', 'none'
 	'--entrypoint', 'sh'
-	'-v', __dirname
+	'-v', __dirname + ':/vol/'
+	'-u', '$(id -u):$(id -g)'
 	'tomlau10/sandbox-run'
-	'-c', '"ls /"'
+	'-c', '"ls /vol"'
 ].join ' '
 
 childProcess.exec cmd, {timeout: 2000}, (err, stdout, stderr) ->
