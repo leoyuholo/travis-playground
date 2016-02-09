@@ -9,17 +9,16 @@ cmd = [
 	'-v', __dirname + ':/vol/'
 	'-u', '$(id -u):$(id -g)'
 	'tomlau10/sandbox-run'
-	'-C'
 	'-c', 'code.c'
 	'code'
 ].join ' '
 
 proc = childProcess.exec cmd, {timeout: 20000}, (err, stdout, stderr) ->
 	console.log "err [#{err}]"
-	# console.log "stdout [#{stdout}]"
+	console.log "stdout [#{stdout}]"
 	console.log "stderr [#{stderr}]"
 
-proc.stdin.write '0\n'
+proc.stdin.write '1000\n'
 
 proc.stdout.on 'data', (data) ->
 	console.log 'data', data
