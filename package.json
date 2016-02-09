@@ -4,9 +4,12 @@
   "author": "Leo Yu Ho, Lo <leoyuholo@gmail.com>",
   "version": "0.0.0",
   "scripts": {
-    "test": "coffeelint app.coffee"
+    "test": "coffee app.coffee"
   },
   "devDependencies": {
     "coffeelint": "^1.14.2"
+  },
+  "dependencies": {
+    "coffee-script": "^1.10.0"
   }
 }
