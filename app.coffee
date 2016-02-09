@@ -14,7 +14,7 @@ cmd = [
 	'code'
 ].join ' '
 
-proc = childProcess.exec cmd, {timeout: 4000}, (err, stdout, stderr) ->
+proc = childProcess.exec cmd, {timeout: 20000}, (err, stdout, stderr) ->
 	console.log "err [#{err}]"
 	# console.log "stdout [#{stdout}]"
 	console.log "stderr [#{stderr}]"
