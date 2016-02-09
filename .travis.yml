@@ -17,8 +17,5 @@ before_install:
   - id -u
   - id -g
 
-script:
-  - docker run ubuntu ls
-
 notifications:
   email: false
