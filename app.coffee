@@ -1,35 +1,10 @@
-childProcess = require 'child_process'
+mongodb = require 'mongodb'
+MongoClient = mongodb.MongoClient
 
-cmd = [
-	'docker'
-	'run'
-	'-i'
-	'--rm'
-	'--net', 'none'
-	'-v', __dirname + ':/vol/'
-	'-u', '$(id -u):$(id -g)'
-	'tomlau10/sandbox-run'
-	'-c', 'code.c'
-	'code'
-].join ' '
+url = 'mongodb://localhost:27017'
 
-proc = childProcess.exec cmd, {timeout: 20000}, (err, stdout, stderr) ->
-	console.log "err [#{err}]"
-	console.log "stdout [#{stdout}]"
-	console.log "stderr [#{stderr}]"
+MongoClient.connect url, (err, db) ->
+	return console.log err if err
+	console.log 'Connected successfully to server'
 
-proc.stdin.write '1000\n'
-
-proc.stdout.on 'data', (data) ->
-	console.log 'data', data
-	num = +data
-	proc.stdin.write "#{num + 100}\n" if !isNaN num
-
-proc.stderr.on 'data', (data) ->
-	console.log 'err', data
-
-proc.on 'end', (code) ->
-	console.log 'end', code
-
-console.log cmd
-console.log 'Hello Travis'
+	db.close()

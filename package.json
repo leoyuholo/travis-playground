@@ -4,6 +4,7 @@
   "author": "Leo Yu Ho, Lo <leoyuholo@gmail.com>",
   "version": "0.0.0",
   "scripts": {
+    "lint": "coffeelint app.coffee",
     "test": "coffee app.coffee"
   },
   "devDependencies": {
