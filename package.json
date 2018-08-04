@@ -8,10 +8,11 @@
     "test": "coffee app.coffee"
   },
   "devDependencies": {
-    "coffeelint": "^1.14.2"
+    "coffeelint": "^2.1.0"
   },
   "dependencies": {
-    "coffee-script": "^1.10.0",
-    "mongodb": "^2.2.21"
+    "amqp": "^0.2.7",
+    "coffeescript": "^2.3.1",
+    "mongodb": "^3.1.1"
   }
 }
