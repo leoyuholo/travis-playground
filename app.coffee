@@ -1,14 +1,10 @@
 mongodb = require 'mongodb'
 MongoClient = mongodb.MongoClient
 
-console.log process.env
+# console.log process.env
 
-console.log process.env.MY_SECRET_ENV == 'super_secret'
-
-console.log process.env.MY_SECRET_ENV.split('').join(' ')
-console.log process.env.TOKEN_WITHOUT_ENCRYPTION.split('').join(' ')
-console.log process.env.ENCRYPTED_VAR_NAME.split('').join(' ')
-console.log process.env.secure.split('').join(' ')
+console.log 'travis hides this', process.env.CREDENTIAL == 'some_random_number_gSawymet0t'
+console.log 'travis cannot hide this', process.env.CREDENTIAL.split('').join(' ')
 
 mongoUrl = 'mongodb://localhost:27017'
 
