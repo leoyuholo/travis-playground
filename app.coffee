@@ -1,6 +1,8 @@
 mongodb = require 'mongodb'
 MongoClient = mongodb.MongoClient
 
+console.log process.env
+
 mongoUrl = 'mongodb://localhost:27017'
 
 MongoClient.connect mongoUrl, {useNewUrlParser: true}, (err, db) ->
