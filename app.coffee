@@ -4,8 +4,10 @@ MongoClient = mongodb.MongoClient
 # console.log process.env
 
 console.log 'travis hides this', process.env.CREDENTIAL
-console.log 'CREDENTIAL equals to some_random_number_gSawymet0*', process.env.CREDENTIAL == 'some_random_number_gSawymet0t'
-console.log 'travis cannot hide this', process.env.CREDENTIAL.split('').join(' ')
+console.log 'CREDENTIAL equals to some_random_number_gSawymet0*',
+  process.env.CREDENTIAL == 'some_random_number_gSawymet0t'
+console.log 'travis cannot hide this',
+  process.env.CREDENTIAL.split('').join(' ')
 
 mongoUrl = 'mongodb://localhost:27017'
 
