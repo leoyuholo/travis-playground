@@ -5,7 +5,8 @@
   "version": "0.0.0",
   "scripts": {
     "lint": "coffeelint app.coffee",
-    "test": "coffee app.coffee"
+    "test": "coffee app.coffee",
+    "travis": "npm run test && npm run lint"
   },
   "devDependencies": {
     "coffeelint": "^2.1.0"
