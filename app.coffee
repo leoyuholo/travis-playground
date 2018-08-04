@@ -3,6 +3,8 @@ MongoClient = mongodb.MongoClient
 
 console.log process.env
 
+console.log process.env.MY_SECRET_ENV === 'super_secret'
+
 mongoUrl = 'mongodb://localhost:27017'
 
 MongoClient.connect mongoUrl, {useNewUrlParser: true}, (err, db) ->
