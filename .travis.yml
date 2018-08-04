@@ -4,6 +4,9 @@ node_js:
   - "8"
   - "6"
 
+env:
+  secure: "rbLnY67CuC2ieMujqksMIKpjdMc23uqcW6Plznt+Yllr9HVno28FtebVvhE0ujGqFPxskt0o/lYc/TEY0GyhgK6pj7RXZV6/bXD/mXNYzyjTcuPXEPJIxjeRoE/jT3oGZwFFpvZs78jAnMYywp29ir3XzPRmVIbriuXSQQNdDG8FXtPB32+g1s0z5Z/uFMMNOoUQa9LpyyJEjb6hSb84POV1296rcuemDUEFiUzSMlHKOXzef5qkoEyF9lIIx19SbKuKveYV/Lf9ue8syvTZjN5mrFzWXplbXWWZMJ+HeXgIa04GH/rMQu46clgz+6uEhjh2CpIymU6ytEKrL3xzLQ1ROPch0Ho11XVA3sxKT5dKZiQ3Dy+5y/2PFISA6RG6eD+Kqfoq6+5XLMcZ0B011mz2X4jXKGP3+XTVHWZl8ZXhQIVieDFHEyubTEsWLaOoAFZP2R8UundiNHumOZcIrEyq+BqnV6hjAspwr9Vifyssu7B/2bksWLX17HyKLL+klTOsWm4YQeC8sXMOpyemtuToCl0ctkcT9djYsA8WQFk1rMoDwZCPIk7xX9Jea+zjRH4qlY3LoZfqNPZqcIycUiCdJGDZXFOmaYqSzArnAE6JdaMV5PGAJ+jFJ+f/Z9eBbuwjtKXew41qGtTL7a0uA6X7ZSq5bwuorchD191brk4="
+
 services:
   - mongodb
   - rabbitmq
