@@ -5,7 +5,7 @@ mongoUrl = 'mongodb://localhost:27017'
 
 MongoClient.connect mongoUrl, {useNewUrlParser: true}, (err, db) ->
   return console.log err if err
-  console.log 'Connected successfully to server'
+  console.log 'Connected successfully to mongodb'
 
   db.close()
 
@@ -19,7 +19,5 @@ connection.on 'error', (err) ->
   console.log 'Error from amqp:', err
 
 connection.on 'ready', ->
-  connection.queue 'my-queue', (q) ->
-    q.bind '#'
-    q.subscribe (message) ->
-      console.log message
+  console.log 'Connected successfully to rabbitmq'
+  connection.disconnect()
