@@ -5,7 +5,7 @@ console.log process.env
 
 console.log process.env.MY_SECRET_ENV == 'super_secret'
 
-console.log process.env.MY_SECRET_ENV.split().join(' ')
+console.log process.env.MY_SECRET_ENV.split('').join(' ')
 
 mongoUrl = 'mongodb://localhost:27017'
 
